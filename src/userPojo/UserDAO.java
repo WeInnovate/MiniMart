@@ -10,26 +10,33 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Projections;
 
 public class UserDAO {
 
-	SessionFactory sessionfactory=null;
+	static SessionFactory sessionfactory = null;
+	static Session session = null;
+	static Transaction transaction = null;
+	
 	Query query=null;
-	Session session=null;
-	Transaction transaction=null;
-
-
+	static{
+	sessionfactory=new Configuration().configure().buildSessionFactory();;
+	session=sessionfactory.openSession();
+	transaction =session.beginTransaction();
+	}
+	
 	public boolean insert(User user){
+		
+		
+	
 		boolean userInserted = false;
 		//SessionFactory sessionfactory=null;
 		sessionfactory=new Configuration().configure().buildSessionFactory();
 		 session=sessionfactory.openSession();
 		 transaction=session.beginTransaction();
-
+    
 		String u = (String)session.save(user);
-		
 		String ul= null;
-		
 		if(u != null){
 			UserLogin user2=new UserLogin();
 			user2.setUserName(user.getUserName());
@@ -47,6 +54,14 @@ public class UserDAO {
 		
 		return userInserted;
 		}
+	public boolean insertDummyItems(){
+		boolean flag = false;
+		for(int i = 1; i<7; i++){
+			flag = session.save(new Item("Product"+i,"Item "+i, "$"+i)) != null;
+		}		
+		transaction.commit();
+		return flag;
+	}
 	
    public boolean checkLogin(UserLogin userlogin){
 	   boolean validuser=false;
@@ -74,25 +89,22 @@ public class UserDAO {
 	   sessionfactory=new Configuration().configure().buildSessionFactory();
 	   session=sessionfactory.openSession();
 	   transaction=session.beginTransaction();
-	   System.out.println("kmedmow");
+	   System.out.println("kmedmo");
 	   return (User)session.get(User.class, userName);
    }
    
   
-   public Item itemFatch(Item item){
+   public Item itemFatch(String viewitem){
 	   
-	   sessionfactory=new Configuration().configure().buildSessionFactory();
-	   session=sessionfactory.openSession();
-	   transaction=session.beginTransaction();
+	   
 		//String u = (String)session.save(item);
-	   System.out.println("Item :");
+	   System.out.println("Item :"+viewitem);
 	   //Item item1=new Item();
 	   
-	   return (Item)session.get(Item.class,(Serializable) item);
-	   
-	   
-	    
-	    
-	   
+	   return (Item)session.get(Item.class, viewitem);
    }
+   
+   public int itemCount(){
+ 	   return Integer.parseInt(session.createCriteria(Item.class).setProjection(Projections.rowCount()).uniqueResult().toString());
+    }
 }

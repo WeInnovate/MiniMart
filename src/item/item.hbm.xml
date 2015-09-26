@@ -5,11 +5,11 @@
  
  <hibernate-mapping>
  <class name="item.Item" table="Item_Table">
- <id name="ItemID" type="string" column="iten_id">
+ <id name="ItemID" type="string" column="item_id">
  <generator class="assigned"></generator>
  </id>
  <property name="ItemName" type="string" column="item_name"></property>
- <property name="Price" type="string" column="item_name"></property>
+ <property name="Price" type="string" column="price"></property>
  
  
  </class>

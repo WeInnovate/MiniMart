@@ -4,6 +4,17 @@ public class Item {
 	private String ItemID;
 	private String ItemName;
 	private String Price;
+	
+	
+	public Item(String itemID, String itemName, String price) {
+		super();
+		ItemID = itemID;
+		ItemName = itemName;
+		Price = price;
+	}
+	public Item() {
+		// TODO Auto-generated constructor stub
+	}
 	public String getItemID() {
 		return ItemID;
 	}
