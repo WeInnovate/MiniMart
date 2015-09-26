@@ -12,7 +12,7 @@
 		<property name="connection.driver_class">org.h2.Driver</property>
 		<property name="connection.url">jdbc:h2:tcp://localhost/~/test</property>
 		<property name="hibernate.connection.autocommit">true</property>
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto"></property>
 <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 <mapping resource="userPojo/User.hbm.xml"/>
 <mapping resource="login/userLogin.hbm.xml"/>

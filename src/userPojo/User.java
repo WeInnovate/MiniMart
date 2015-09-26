@@ -1,9 +1,17 @@
 package userPojo;
 
 public class User {
+	private String FullName;
 	private String UserName;
 	private String Password;
 	
+	
+	public String getFullName() {
+		return FullName;
+	}
+	public void setFullName(String fullName) {
+		FullName = fullName;
+	}
 	public String getUserName() {
 		return UserName;
 	}
@@ -16,11 +24,12 @@ public class User {
 	public void setPassword(String password) {
 		Password = password;
 	}
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result
+				+ ((FullName == null) ? 0 : FullName.hashCode());
 		result = prime * result
 				+ ((Password == null) ? 0 : Password.hashCode());
 		result = prime * result
@@ -36,6 +45,11 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
+		if (FullName == null) {
+			if (other.FullName != null)
+				return false;
+		} else if (!FullName.equals(other.FullName))
+			return false;
 		if (Password == null) {
 			if (other.Password != null)
 				return false;
@@ -50,8 +64,10 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [UserName=" + UserName + ", Password=" + Password + "]";
+		return "User [FullName=" + FullName + ", UserName=" + UserName
+				+ ", Password=" + Password + "]";
 	}
-
+	
+	
 	
 }

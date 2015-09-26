@@ -1,7 +1,5 @@
 package userPojo;
 
-import java.io.Serializable;
-
 import item.Item;
 import login.UserLogin;
 
@@ -20,21 +18,14 @@ public class UserDAO {
 	
 	Query query=null;
 	static{
-	sessionfactory=new Configuration().configure().buildSessionFactory();;
-	session=sessionfactory.openSession();
-	transaction =session.beginTransaction();
+	sessionfactory=new Configuration().configure().buildSessionFactory();
+//	session=sessionfactory.openSession();
+//	transaction =session.beginTransaction();
 	}
 	
 	public boolean insert(User user){
-		
-		
-	
 		boolean userInserted = false;
-		//SessionFactory sessionfactory=null;
-		sessionfactory=new Configuration().configure().buildSessionFactory();
-		 session=sessionfactory.openSession();
-		 transaction=session.beginTransaction();
-    
+	
 		String u = (String)session.save(user);
 		String ul= null;
 		if(u != null){
@@ -46,8 +37,6 @@ public class UserDAO {
 		if(ul != null){
 				userInserted = true;
 				System.out.println("Data inserted");
-//				session.save(user);
-//				session.save(user2);
 		}
 		
 		transaction.commit();
@@ -65,7 +54,7 @@ public class UserDAO {
 	
    public boolean checkLogin(UserLogin userlogin){
 	   boolean validuser=false;
-	   sessionfactory=new Configuration().configure().buildSessionFactory();
+//	   sessionfactory=new Configuration().configure().buildSessionFactory();
 	   session=sessionfactory.openSession();
 //	   String qr="Setect * from DataUserLogin where user_name and password=? ?";
 //	   query=session.createQuery(qr);
@@ -86,9 +75,9 @@ public class UserDAO {
 	  
   }	
    public User fatch(String userName){
-	   sessionfactory=new Configuration().configure().buildSessionFactory();
+//	   sessionfactory=new Configuration().configure().buildSessionFactory();
 	   session=sessionfactory.openSession();
-	   transaction=session.beginTransaction();
+//	   transaction=session.beginTransaction();
 	   System.out.println("kmedmo");
 	   return (User)session.get(User.class, userName);
    }

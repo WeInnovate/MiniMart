@@ -8,7 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import login.UserLogin;
 import userPojo.User;
 import userPojo.UserDAO;
 
@@ -17,44 +19,58 @@ public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
-		 String username= request.getParameter("username");
-		 String password=request.getParameter("password");
-		 System.out.println(username+" "+password);
-		 System.out.println("hi");
-		 
-		 //Data for DataUser Table(Registration Table)
-		 User u3=new User();
-		 u3.setUserName(username);
-		 u3.setPassword(password);
-		
-		
-		 
-		  boolean u5=(boolean) (new UserDAO()).insert(u3);
-	  if(u5 ){
-			  RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
-			  rd.forward(request, response);
-			  
-		  }
-		  else{
-			  RequestDispatcher rd= request.getRequestDispatcher("Registration.jsp");
-		  rd.forward(request, response);
-			  
-		  }
-		
+		String name= request.getParameter("name");
+		System.out.println("----"+name);
+		String username=request.getParameter("username");
+		String password=request.getParameter("password");
+
+		if(name == ""){
+			System.out.println(username+" "+password);
+
+			UserLogin ul2=new UserLogin();
+			ul2.setUserName(username);
+			ul2.setPassword(password);
+
+			boolean ul3=(new UserDAO()).checkLogin(ul2);
+
+			User da=(new UserDAO()).fatch(username);
+			System.out.println("lllllll"+da.getFullName());
+			request.setAttribute("name", da.getFullName());
+			RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
+			System.out.println("loaded");
+		}          
+		else{
+			User u3=new User();
+			u3.setUserName(username);
+			u3.setPassword(password);
+			u3.setPassword(name);
+
+			boolean u5=(boolean) (new UserDAO()).insert(u3);
+			RequestDispatcher rd = null;
+
+			if(u5){
+				rd  = request.getRequestDispatcher("index.jsp");
+			}
+			else{
+				rd  = request.getRequestDispatcher("index.jsp");
+			}
+			rd.forward(request, response);
+		}
 	}
 
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		 
+
+
 	}
-	
-//	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//	}
+
+	//	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	//		
+	//	}
 
 }

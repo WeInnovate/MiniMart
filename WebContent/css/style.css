@@ -67,7 +67,8 @@ Cart button
 
 -------------------------------- */
 .cd-cart {
-  position: absolute;
+   position: absolute; 
+  margin-top: 68px;
   z-index: 2;
   top: 24px;
   right: 10px;
@@ -461,7 +462,7 @@ Product Customization
   width: calc(50% - 23px);
 }
 .cd-customization .size li, .cd-customization .add-to-cart {
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 34px;

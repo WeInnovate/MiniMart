@@ -8,6 +8,7 @@
  <id name="UserName" type="string" column="user_name">
  <generator class="assigned"></generator>
  </id>
+ <property name="FullName" type="string" column="full_name"></property>
  <property name="Password" type="string" column="password"></property>
  
  </class>
