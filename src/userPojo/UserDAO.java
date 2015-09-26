@@ -25,7 +25,8 @@ public class UserDAO {
 	
 	public boolean insert(User user){
 		boolean userInserted = false;
-	
+		session=sessionfactory.openSession();
+		transaction =session.beginTransaction();
 		String u = (String)session.save(user);
 		String ul= null;
 		if(u != null){
@@ -44,6 +45,8 @@ public class UserDAO {
 		return userInserted;
 		}
 	public boolean insertDummyItems(){
+		session=sessionfactory.openSession();
+		transaction =session.beginTransaction();
 		boolean flag = false;
 		for(int i = 1; i<7; i++){
 			flag = session.save(new Item("Product"+i,"Item "+i, "$"+i)) != null;
@@ -56,6 +59,7 @@ public class UserDAO {
 	   boolean validuser=false;
 //	   sessionfactory=new Configuration().configure().buildSessionFactory();
 	   session=sessionfactory.openSession();
+	   transaction =session.beginTransaction();
 //	   String qr="Setect * from DataUserLogin where user_name and password=? ?";
 //	   query=session.createQuery(qr);
 	   System.out.println("Here "+userlogin.getUserName());
@@ -77,7 +81,7 @@ public class UserDAO {
    public User fatch(String userName){
 //	   sessionfactory=new Configuration().configure().buildSessionFactory();
 	   session=sessionfactory.openSession();
-//	   transaction=session.beginTransaction();
+	   transaction=session.beginTransaction();
 	   System.out.println("kmedmo");
 	   return (User)session.get(User.class, userName);
    }

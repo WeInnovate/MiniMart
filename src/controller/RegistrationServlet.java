@@ -48,16 +48,16 @@ public class RegistrationServlet extends HttpServlet {
 			User u3=new User();
 			u3.setUserName(username);
 			u3.setPassword(password);
-			u3.setPassword(name);
+			u3.setFullName(name);
 
 			boolean u5=(boolean) (new UserDAO()).insert(u3);
 			RequestDispatcher rd = null;
-
+			request.setAttribute("name", u3.getFullName());
 			if(u5){
 				rd  = request.getRequestDispatcher("index.jsp");
 			}
 			else{
-				rd  = request.getRequestDispatcher("index.jsp");
+				rd  = request.getRequestDispatcher("Login.jsp");
 			}
 			rd.forward(request, response);
 		}
