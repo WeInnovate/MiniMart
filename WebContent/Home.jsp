@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home page</title>
 </head>
-<body bgcolor="#E6E6FA">
+<body>
 <form action="Item.jsp" method="post">
 <center>
 <h1>Hello!</h1>
@@ -30,7 +30,9 @@
 <td><input type="reset" value="Clear"/></td>
 
 </table>
-</center>
-</form>
-</body>
-</html>
+<table width="400" border="0" align="center" cellpadding="3" cellspacing="1">
+<tr>
+<td>Contact Form </td>
+</tr>
+</table>
+ </center></form></body></html>
