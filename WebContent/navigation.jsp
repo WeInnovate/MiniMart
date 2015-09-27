@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page import="java.io.*,java.util.*" %>
+<%@ page import="java.io.*,java.util.*"%>
 <nav>
 	<div class="wrapper">
 		<ul id="menu" class="clearfix">
@@ -61,9 +61,7 @@
 					<li><a href="www.Instagram.com">Instagram</a></li>
 					<li><a href="#"></a></li>
 				</ul></li>
-			<li><a href="Login.jsp">
-					${param.name}
-			</a></li>
+			<li><a href="Login.jsp"> ${param.name} </a></li>
 		</ul>
 	</div>
 </nav>

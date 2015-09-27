@@ -74,8 +74,8 @@
 	transition: transform 0.3s, opacity 0.3s;
 }
 
-.no-touch .cs-style-1 figure:hover figcaption,
-.cs-style-1 figure.cs-hover figcaption {
+.no-touch .cs-style-1 figure:hover figcaption,.cs-style-1 figure.cs-hover figcaption
+	{
 	opacity: 1;
 	-webkit-transform: translate(15px, 15px);
 	-moz-transform: translate(15px, 15px);
@@ -103,8 +103,7 @@
 	transition: transform 0.4s;
 }
 
-.no-touch .cs-style-2 figure:hover img,
-.cs-style-2 figure.cs-hover img {
+.no-touch .cs-style-2 figure:hover img,.cs-style-2 figure.cs-hover img {
 	-webkit-transform: translateY(-90px);
 	-moz-transform: translateY(-90px);
 	-ms-transform: translateY(-90px);
@@ -135,8 +134,7 @@
 	transition: transform 0.4s;
 }
 
-.no-touch .cs-style-3 figure:hover img,
-.cs-style-3 figure.cs-hover img {
+.no-touch .cs-style-3 figure:hover img,.cs-style-3 figure.cs-hover img {
 	-webkit-transform: translateY(-50px);
 	-moz-transform: translateY(-50px);
 	-ms-transform: translateY(-50px);
@@ -158,8 +156,8 @@
 	transition: transform 0.4s, opacity 0.1s 0.3s;
 }
 
-.no-touch .cs-style-3 figure:hover figcaption,
-.cs-style-3 figure.cs-hover figcaption {
+.no-touch .cs-style-3 figure:hover figcaption,.cs-style-3 figure.cs-hover figcaption
+	{
 	opacity: 1;
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
@@ -192,7 +190,7 @@
 	transform-style: preserve-3d;
 }
 
-.cs-style-4 figure > div {
+.cs-style-4 figure>div {
 	overflow: hidden;
 }
 
@@ -202,8 +200,7 @@
 	transition: transform 0.4s;
 }
 
-.no-touch .cs-style-4 figure:hover img,
-.cs-style-4 figure.cs-hover img {
+.no-touch .cs-style-4 figure:hover img,.cs-style-4 figure.cs-hover img {
 	-webkit-transform: translateX(25%);
 	-moz-transform: translateX(25%);
 	-ms-transform: translateX(25%);
@@ -228,8 +225,8 @@
 	transition: transform 0.4s, opacity 0.1s 0.3s;
 }
 
-.no-touch .cs-style-4 figure:hover figcaption,
-.cs-style-4 figure.cs-hover figcaption {
+.no-touch .cs-style-4 figure:hover figcaption,.cs-style-4 figure.cs-hover figcaption
+	{
 	opacity: 1;
 	-webkit-transform: rotateY(0deg);
 	-moz-transform: rotateY(0deg);
@@ -253,8 +250,7 @@
 	transition: transform 0.4s;
 }
 
-.no-touch .cs-style-5 figure:hover img,
-.cs-style-5 figure.cs-hover img {
+.no-touch .cs-style-5 figure:hover img,.cs-style-5 figure.cs-hover img {
 	-webkit-transform: scale(0.4);
 	-moz-transform: scale(0.4);
 	-ms-transform: scale(0.4);
@@ -277,8 +273,8 @@
 	transition: transform 0.4s, opacity 0.4s;
 }
 
-.no-touch .cs-style-5 figure:hover figcaption,
-.cs-style-5 figure.cs-hover figcaption {
+.no-touch .cs-style-5 figure:hover figcaption,.cs-style-5 figure.cs-hover figcaption
+	{
 	-webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);
@@ -300,8 +296,7 @@
 	transition: transform 0.4s;
 }
 
-.no-touch .cs-style-6 figure:hover img,
-.cs-style-6 figure.cs-hover img {
+.no-touch .cs-style-6 figure:hover img,.cs-style-6 figure.cs-hover img {
 	-webkit-transform: translateY(-50px) scale(0.5);
 	-moz-transform: translateY(-50px) scale(0.5);
 	-ms-transform: translateY(-50px) scale(0.5);
@@ -324,12 +319,29 @@
 }
 
 /* Caption Style 7 */
-.cs-style-7 li:first-child { z-index: 6; }
-.cs-style-7 li:nth-child(2) { z-index: 5; }
-.cs-style-7 li:nth-child(3) { z-index: 4; }
-.cs-style-7 li:nth-child(4) { z-index: 3; }
-.cs-style-7 li:nth-child(5) { z-index: 2; }
-.cs-style-7 li:nth-child(6) { z-index: 1; }
+.cs-style-7 li:first-child {
+	z-index: 6;
+}
+
+.cs-style-7 li:nth-child(2) {
+	z-index: 5;
+}
+
+.cs-style-7 li:nth-child(3) {
+	z-index: 4;
+}
+
+.cs-style-7 li:nth-child(4) {
+	z-index: 3;
+}
+
+.cs-style-7 li:nth-child(5) {
+	z-index: 2;
+}
+
+.cs-style-7 li:nth-child(6) {
+	z-index: 1;
+}
 
 .cs-style-7 figure img {
 	z-index: 10;
@@ -348,8 +360,8 @@
 	box-shadow: 0 0 0 0px #2c3f52;
 }
 
-.no-touch .cs-style-7 figure:hover figcaption,
-.cs-style-7 figure.cs-hover figcaption {
+.no-touch .cs-style-7 figure:hover figcaption,.cs-style-7 figure.cs-hover figcaption
+	{
 	opacity: 1;
 	height: 130%;
 	box-shadow: 0 0 0 10px #2c3f52;
@@ -359,9 +371,8 @@
 	margin-top: 86%;
 }
 
-.cs-style-7 figcaption h3,
-.cs-style-7 figcaption span,
-.cs-style-7 figcaption a {
+.cs-style-7 figcaption h3,.cs-style-7 figcaption span,.cs-style-7 figcaption a
+	{
 	opacity: 0;
 	-webkit-transition: opacity 0s;
 	-moz-transition: opacity 0s;
@@ -374,12 +385,8 @@
 	right: 20px;
 }
 
-.no-touch .cs-style-7 figure:hover figcaption h3,
-.no-touch .cs-style-7 figure:hover figcaption span,
-.no-touch .cs-style-7 figure:hover figcaption a,
-.cs-style-7 figure.cs-hover figcaption h3,
-.cs-style-7 figure.cs-hover figcaption span,
-.cs-style-7 figure.cs-hover figcaption a {
+.no-touch .cs-style-7 figure:hover figcaption h3,.no-touch .cs-style-7 figure:hover figcaption span,.no-touch .cs-style-7 figure:hover figcaption a,.cs-style-7 figure.cs-hover figcaption h3,.cs-style-7 figure.cs-hover figcaption span,.cs-style-7 figure.cs-hover figcaption a
+	{
 	-webkit-transition: opacity 0.3s 0.2s;
 	-moz-transition: opacity 0.3s 0.2s;
 	transition: opacity 0.3s 0.2s;

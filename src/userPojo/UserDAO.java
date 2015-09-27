@@ -57,11 +57,10 @@ public class UserDAO {
 	
    public boolean checkLogin(UserLogin userlogin){
 	   boolean validuser=false;
-//	   sessionfactory=new Configuration().configure().buildSessionFactory();
+   
 	   session=sessionfactory.openSession();
 	   transaction =session.beginTransaction();
-//	   String qr="Setect * from DataUserLogin where user_name and password=? ?";
-//	   query=session.createQuery(qr);
+
 	   System.out.println("Here "+userlogin.getUserName());
 	   UserLogin user3 = (UserLogin) session.get(UserLogin.class,userlogin.getUserName());
 	  System.out.println("nife "+user3);
@@ -79,25 +78,24 @@ public class UserDAO {
 	  
   }	
    public User fatch(String userName){
-//	   sessionfactory=new Configuration().configure().buildSessionFactory();
+
 	   session=sessionfactory.openSession();
 	   transaction=session.beginTransaction();
-	   System.out.println("kmedmo");
+	   
 	   return (User)session.get(User.class, userName);
    }
    
   
    public Item itemFatch(String viewitem){
+	   session=sessionfactory.openSession();
 	   
-	   
-		//String u = (String)session.save(item);
 	   System.out.println("Item :"+viewitem);
-	   //Item item1=new Item();
-	   
+	  
 	   return (Item)session.get(Item.class, viewitem);
    }
    
    public int itemCount(){
+	   session=sessionfactory.openSession();
  	   return Integer.parseInt(session.createCriteria(Item.class).setProjection(Projections.rowCount()).uniqueResult().toString());
     }
 }

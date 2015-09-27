@@ -4,6 +4,8 @@ import item.Item;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,11 +14,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import userPojo.UserDAO;
-
+ 
 
 //@WebServlet("/AddCart")
 public class ViewCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	static HashMap hm=new HashMap(); 
+	static{
+	
+	hm.put("Product1","img/thumb-1.jpg");  
+	hm.put("Product2","img/thumb-2.jpg");  
+	hm.put("Product3","img/thumb-3.jpg");  
+	hm.put("Product4","img/thumb-1.jpg");
+	hm.put("Product5","img/thumb-2.jpg");
+	hm.put("Product6","img/thumb-3.jpg");
+
+	}
+	
     
     public ViewCartServlet() {
         super();
@@ -51,7 +65,11 @@ public class ViewCartServlet extends HttpServlet {
 		if(isertDummyItemsOrNot){
 		Item it= userDAO.itemFatch(viewitem);
 		System.out.println("Heloo "+it);
-			RequestDispatcher rd=request.getRequestDispatcher("Successful.jsp");
+		request.setAttribute("abc",it.getItemID());
+		request.setAttribute("bcd",it.getItemName() );
+		request.setAttribute("efc",it.getPrice());
+		request.setAttribute("img", (String)hm.get(it.getItemID()));
+			RequestDispatcher rd=request.getRequestDispatcher("Item.jsp");
 			rd.forward(request, response);
 		}
 		else{
