@@ -19,8 +19,6 @@ public class UserDAO {
 	Query query=null;
 	static{
 	sessionfactory=new Configuration().configure().buildSessionFactory();
-//	session=sessionfactory.openSession();
-//	transaction =session.beginTransaction();
 	}
 	
 	public boolean insert(User user){
