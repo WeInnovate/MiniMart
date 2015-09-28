@@ -8,8 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import login.UserLogin;
 import userPojo.User;
 import userPojo.UserDAO;
@@ -34,8 +32,8 @@ public class RegistrationServlet extends HttpServlet {
 			UserLogin ul2=new UserLogin();
 			ul2.setUserName(username);
 			ul2.setPassword(password);
-
-			boolean ul3=(new UserDAO()).checkLogin(ul2);
+			UserDAO ud = new UserDAO();
+			boolean ul3=ud.checkLogin(ul2);
 
 			User da=(new UserDAO()).fatch(username);
 			System.out.println("lllllll"+da.getFullName());

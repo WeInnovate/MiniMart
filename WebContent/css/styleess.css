@@ -1,0 +1,89 @@
+body {
+	width: 100%;
+	background:url(../images/blurred-bg.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	overflow: hidden;
+}
+section {
+	
+	width: 488px;
+	margin: 0 auto;
+	background: rgba(0,0,0,0.1);
+	margin-top: 100px;
+}
+section.form {
+	padding: 10px 70px 30px 70px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 5;
+}
+section.form h1 {
+	margin-bottom: 20px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 32px;
+	color: #ffffff;
+	text-transform: uppercase;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+form input {
+	display: block;
+	width: 350px;
+	height: 50px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	color: #ffffff;
+	background: #000000;
+	outline: none;
+	margin-bottom: 20px;
+	padding-left: 10px;
+	background: rgba(60, 25, 25, .2);
+	border: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+form input:nth-child(3) {
+}
+textarea {
+	height: 100px;
+	width: 350px;
+	resize: none;
+	padding-left: 10px;
+	padding-top: 10px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	color: #ffffff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+	outline: none;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.5);
+	background: rgba(0,0,0,0.2);
+	margin-bottom: 15px;
+}
+form input:nth-child(4) {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	text-transform: uppercase;
+	width: 360px;
+	height: 40px;
+	border: none;
+	border: 1px solid #2ECC71;
+	background:url(../images/overlay.png) repeat-x center #2ECC71;
+	border-bottom:1px solid #27AE60;
+	-moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+}
+#thanks {
+	background:url(../overlay.png) repeat-x center #F1C40F;
+	border: 1px solid #F1C40F;
+	border-bottom: 1px solid #B79C04;
+	pointer-events: none;
+}
